@@ -1,40 +1,39 @@
-
 package boletin_27;
 
 import boletin_27.Alumnado.Alumno;
 import javax.swing.table.DefaultTableModel;
 
-
 public class Ventana extends javax.swing.JFrame {
+
     Alumno alumno = new Alumno();
-String alumnoTabla []= new String[3];    
-String [] alu = new String[3];
+    String alumnoTabla[] = new String[3];
+    String[] alu = new String[3];
 
     public Ventana() {
         initComponents();
     }
-    
-   public void cargarAlu(){
-      alu[0] = alumno.getNome();
-      alu[1]= alumno.getApelido();
-      alu[2] = alumno.getCurso();
-      alumnoTabla[0]=campo1.getText();
-      alumnoTabla[1]=campo2.getText();
-      alumnoTabla[2]=(String) combo1.getSelectedItem();
-   }
-public void cargarTabla(){
-      this.cargarAlu();
-     
-      alu[0] = alumnoTabla[0];
-      alu[1] = alumnoTabla[1];
-      alu[2]=  alumnoTabla[2];
-      
-    DefaultTableModel modelo = (DefaultTableModel) tabla1.getModel();
-    modelo.addRow(alu);
-    tabla1.setModel(modelo);
-}
-   
-  
+
+    public void cargarAlu() {
+        alu[0] = alumno.getNome();
+        alu[1] = alumno.getApelido();
+        alu[2] = alumno.getCurso();
+        alumnoTabla[0] = campo1.getText();
+        alumnoTabla[1] = campo2.getText();
+        alumnoTabla[2] = (String) combo1.getSelectedItem();
+    }
+
+    public void cargarTabla() {
+        this.cargarAlu();
+
+        alu[0] = alumnoTabla[0];
+        alu[1] = alumnoTabla[1];
+        alu[2] = alumnoTabla[2];
+
+        DefaultTableModel modelo = (DefaultTableModel) tabla1.getModel();
+        modelo.addRow(alu);
+        tabla1.setModel(modelo);
+    }
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -188,33 +187,32 @@ public void cargarTabla(){
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-public void cargarArray(){
-    alu[0]= alumno.getNome();
-    alu[1]= alumno.getApelido();
-    alu[2]= alumno.getCurso();
-}
+public void cargarArray() {
+        alu[0] = alumno.getNome();
+        alu[1] = alumno.getApelido();
+        alu[2] = alumno.getCurso();
+    }
     private void campo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo1ActionPerformed
-  
+
     }//GEN-LAST:event_campo1ActionPerformed
 
     private void campo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo2ActionPerformed
-        
+
     }//GEN-LAST:event_campo2ActionPerformed
 
     private void combo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo1ActionPerformed
-   
+
     }//GEN-LAST:event_combo1ActionPerformed
 
     private void boton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton1ActionPerformed
-     
-        
+
         this.cargarArray();
-       
-       this.cargarTabla();
+
+        this.cargarTabla();
     }//GEN-LAST:event_boton1ActionPerformed
 
     public static void main(String args[]) {
-       
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ventana().setVisible(true);
